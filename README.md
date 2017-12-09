@@ -37,7 +37,7 @@ By default, this would create an SQLite database file within the project directo
 
 ##### Run the development server
 
-```python manage.py runserver```
+```python manage.py runserver 0.0.0.0:8000```
 
 Your site is now accessible at 0.0.0.0:8000 (or watever ip your docker is set to), with the admin backend available at http://localhost:8000/admin/.
 
