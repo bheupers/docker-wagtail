@@ -42,3 +42,5 @@ By default, this would create an SQLite database file within the project directo
 Your site is now accessible at 0.0.0.0:8000 (or watever ip your docker is set to), with the admin backend available at http://localhost:8000/admin/.
 
 [Read more on the wagtail docs](http://docs.wagtail.io/en/v1.13.1/)
+
+*you may need to run ```   sudo chown -R $USER:$USER . ``` if you create a wagtail project from within docker
