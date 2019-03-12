@@ -1,10 +1,12 @@
 # Use an official Python runtime as a parent image
 FROM python:3.7
 LABEL maintainer="hello@wagtail.io"
+ARG port=8000
 
 # Set environment varibles
 ENV PYTHONUNBUFFERED 1
 ENV DJANGO_ENV dev
+ENV PORT=$port
 
 COPY ./requirements.txt /code/requirements.txt
 RUN pip install --upgrade pip
@@ -23,5 +25,5 @@ RUN useradd wagtail
 RUN chown -R wagtail /code
 USER wagtail
 
-EXPOSE 8000
-CMD exec gunicorn mysite.wsgi:application --bind 0.0.0.0:8000 --workers 3
+EXPOSE $PORT
+CMD exec gunicorn mysite.wsgi:application --bind 0.0.0.0:$PORT --workers 3
