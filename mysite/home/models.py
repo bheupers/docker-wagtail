@@ -1,6 +1,7 @@
 from django.db import models
 from modelcluster.fields import ParentalKey
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
+from wagtail.api import APIField
 from wagtail.core.fields import RichTextField
 
 from wagtail.core.models import Page, Orderable
@@ -39,6 +40,13 @@ class OISNewsPage(Page):
     search_fields = Page.search_fields + [
         index.SearchField('body'),
         index.FilterField('date'),
+    ]
+
+    # Export fields over the API
+    api_fields = [
+        APIField('body'),
+        APIField('top_image'),
+        APIField('date'),
     ]
 
     # Editor panels configuration

@@ -44,3 +44,21 @@ Your site is now accessible at 0.0.0.0:8000 (or watever ip your docker is set to
 [Read more on the wagtail docs](http://docs.wagtail.io/en/v1.13.1/)
 
 *you may need to run ```   sudo chown -R $USER:$USER . ``` if you create a wagtail project from within docker
+
+##### Deploy on heroku with Docker
+
+Install heroku command-line utility.
+
+* heroku login
+* heroku create
+
+This will create a app with name : app_name
+* cd  mysite
+
+We will use the docker file in mysite directory
+* heroku container:push web --app=[app_name]
+* heroku container:release web --app=[app_name]
+* heroku open --app=[app_name]
+
+This is only for demo usage. It will use the SQLite3 database that was present when pushed. 
+After every restart it will use that database version again.
