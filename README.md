@@ -56,6 +56,7 @@ This will create a app with name : app_name
 * cd  mysite
 
 We will use the docker file in mysite directory
+* heroku container:login
 * heroku container:push web --app=[app_name]
 * heroku container:release web --app=[app_name]
 * heroku open --app=[app_name]
