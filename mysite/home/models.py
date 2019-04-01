@@ -47,6 +47,7 @@ class OISNewsPage(Page):
         APIField('body'),
         APIField('top_image'),
         APIField('date'),
+        APIField('related_links'),
     ]
 
     # Editor panels configuration
@@ -79,4 +80,9 @@ class OISNewsPageRelatedLink(Orderable):
     panels = [
         FieldPanel('name'),
         FieldPanel('url'),
+    ]
+
+    api_fields = [
+        APIField('name'),
+        APIField('url'),
     ]
